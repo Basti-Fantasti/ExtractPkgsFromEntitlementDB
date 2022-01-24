@@ -15,7 +15,16 @@ The script is not perfect and not all errors are caught but it does its job :-)
 
 **The downloaded pkgs can only be run on the same PS4 as the entitlement.db was taken from.**
 
-## Setup
+## Use Release File
+
+The script can be downloaded as a zip file containing the Windows EXE file of the compiled script. 
+
+Just extract the exe file into a directory on your hard drive and place the entitlement.db file in the same directory.
+
+Execute the **ExtractPkgsFromEntitlementDB.exe** file and wait for the process to be finished.
+
+
+## Setup Python venv for using the script
 
 - Install Python 3.8+ (with virtualenv, virtualenvwrapper-win, pip)
 - clone this repo
@@ -48,8 +57,7 @@ Example Format of CSV File:
 | --- | ---| ---|
 |EP0006-CUSA02532_00-UNRAVELUNRAVEL09 |Unravel | http://gs2.ww.prod.dl.playstation.net/.../EP0006-CUSA02532_00-UNRAVELUNRAVEL09.pkg
 
-the links without any description or ID will be written to **dl_links_only.txt** file in the same directory
-
+the links without any description or ID will be written to **dl_links_only.txt** file in the same directory for importing into jdownloader
 ## Additional
 
 You can then use any program to directly download the package files (e.g. jdownloader2)
