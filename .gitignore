@@ -132,3 +132,5 @@ dmypy.json
 entitlement.db
 dl_links.csv
 dl_links_only.txt
+*.exe
+*.zip
