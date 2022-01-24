@@ -131,3 +131,4 @@ dmypy.json
 # Safety first!
 entitlement.db
 dl_links.csv
+dl_links_only.txt
