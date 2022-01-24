@@ -127,3 +127,7 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# Safety first!
+entitlement.db
+dl_links.csv
