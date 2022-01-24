@@ -49,6 +49,7 @@ Example Format of CSV File:
 |EP0006-CUSA02532_00-UNRAVELUNRAVEL09 |Unravel | http://gs2.ww.prod.dl.playstation.net/.../EP0006-CUSA02532_00-UNRAVELUNRAVEL09.pkg
 
 the links without any description or ID will be written to **dl_links_only.txt** file in the same directory
+
 ## Additional
 
 You can then use any program to directly download the package files (e.g. jdownloader2)
