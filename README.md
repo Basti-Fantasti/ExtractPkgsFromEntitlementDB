@@ -2,7 +2,7 @@
 
 ## Preface
 
-For this to work, you need to jailbreak your PS4 and copy the entitlement.db into the script directory.
+For this to work, you need to jailbreak your PS4 and copy the entitlement.db e.g. via FTP into the script directory.
 
 The entitlement db can be found on the PS4 here:
 
