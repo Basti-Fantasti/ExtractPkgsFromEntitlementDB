@@ -12,6 +12,9 @@ The entitlement db can be found on the PS4 here:
 
 The script is not perfect and not all errors are caught but it does its job :-)
 
+
+**The downloaded pkgs can only be run on the same PS4 as the entitlement.db was taken from.**
+
 ## Setup
 
 - Install Python 3.8+ (with virtualenv, virtualenvwrapper-win, pip)
@@ -38,5 +41,10 @@ Example Format of CSV File:
 | --- | ---| ---|
 |EP0006-CUSA02532_00-UNRAVELUNRAVEL09 |Unravel | http://gs2.ww.prod.dl.playstation.net/.../EP0006-CUSA02532_00-UNRAVELUNRAVEL09.pkg
 
+
+## Additional
+
 You can then use any program to directly download the package files
+
+and process them further (merge updates, ...)
 
