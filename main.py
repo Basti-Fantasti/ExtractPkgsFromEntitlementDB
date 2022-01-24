@@ -10,7 +10,7 @@ def ParseXML(XmlIn):
     root = ET.fromstring(XmlIn)
     url = ''
     for child in root:
-        print(child.tag, child.attrib)
+        #print(child.tag, child.attrib)
         grandchild = child.getchildren()
         data = grandchild[0].attrib
         url = data['manifest_url']
@@ -42,6 +42,7 @@ def RetrieveDownloadLinks(ConfigFileIn):
 
 dbpath = '.\entitlement.db'
 outfile = '.\dl_links.csv'
+outfileLinksOnly = '.\dl_links_only.txt'
 csvheader = ['id', 'title', 'url']
 
 con = sqlite3.connect(dbpath)
@@ -67,26 +68,30 @@ if target_table != '':
     res = c.fetchall()
     # open csv file for results
     with open(outfile, 'w', encoding='UTF8', newline='') as f:
-        writer = csv.writer(f)
-        # write header to file
-        writer.writerow(csvheader)
-        # parse results
-        for dataset in res:
-            data_raw = dataset[0]
-            data = json.loads(data_raw)
-            
-            game_id = data['id']
-            # get json download url
-            try:
-                json_dl_url = data['entitlement_attributes'][0]['reference_package_url']
-                game_title = data['game_meta']['name']
-                print(game_title)
-                # get dl links:
-                lnks = RetrieveDownloadLinks(json_dl_url)
-                for l in lnks:
-                    outset = [game_id, game_title, l]
-                    writer.writerow(outset)
-                    print(f'title: {game_title} URL: {l}')
-            except KeyError:
-                print('No json file found - skip')
+        with open(outfileLinksOnly, 'w', encoding='UTF8', newline='') as f2:           
+            writer = csv.writer(f)
+            writerLO = csv.writer(f2)
+            # write header to file
+            writer.writerow(csvheader)
+            # parse results
+            for dataset in res:
+                data_raw = dataset[0]
+                data = json.loads(data_raw)
+                
+                game_id = data['id']
+                # get json download url
+                try:
+                    json_dl_url = data['entitlement_attributes'][0]['reference_package_url']
+                    game_title = data['game_meta']['name']
+                    print(game_title)
+                    # get dl links:
+                    lnks = RetrieveDownloadLinks(json_dl_url)
+                    for l in lnks:
+                        outset = [game_id, game_title, l]
+                        writer.writerow(outset)
+                        print(f'title: {game_title} URL: {l}')
+                        outsetLO = [l]
+                        writerLO.writerow(outsetLO)
+                except KeyError:
+                    print('No json file found - skip')
 
