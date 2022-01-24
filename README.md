@@ -20,25 +20,26 @@ The script is not perfect and not all errors are caught but it does its job :-)
 - Install Python 3.8+ (with virtualenv, virtualenvwrapper-win, pip)
 - clone this repo
 - Inside cloned repo directrory, Setup virtual environment with:
-    
-    python -m venv venv
-
+````shell    
+python -m venv venv
+````
 - Activate venv with:
-
-    venv\Scripts\activate
-
+````shell
+venv\Scripts\activate
+````
 - Install dependencies:
-
-    pip install -r requirements.txt
-
+````shell
+pip install -r requirements.txt
+````
 - Copy your entitlement.db file to repo directory next to main.py
 
 ## Run the script
 
 - run main.py to start the program:
 
-    python main.py
-
+````shell
+python main.py
+````
 - all found package files will be written to the **dl_links.csv** file in the same directory
 
 Example Format of CSV File:
