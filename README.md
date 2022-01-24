@@ -51,7 +51,7 @@ Example Format of CSV File:
 the links without any description or ID will be written to **dl_links_only.txt** file in the same directory
 ## Additional
 
-You can then use any program to directly download the package files
+You can then use any program to directly download the package files (e.g. jdownloader2)
 
 and process them further (merge updates, ...)
 
