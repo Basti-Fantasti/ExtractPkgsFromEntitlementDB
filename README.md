@@ -29,13 +29,20 @@ Execute the **ExtractPkgsFromEntitlementDB.exe** file and wait for the process t
 - Install Python 3.8+ (with virtualenv, virtualenvwrapper-win, pip)
 - clone this repo
 - Inside cloned repo directrory, Setup virtual environment with:
-````shell    
-python -m venv venv
-````
-- Activate venv with:
-````shell
-venv\Scripts\activate
-````
+```shell    
+python -m venv .venv
+```
+- Activate venv on Windows (Powershell) with:
+```shell
+.venv\Scripts\activate
+```
+
+on Unix/Mac
+
+```Shell
+source .venv\bin\activate
+```
+
 - Install dependencies:
 ````shell
 pip install -r requirements.txt
@@ -49,7 +56,7 @@ pip install -r requirements.txt
 ````shell
 python main.py
 ````
-- all found package files will be written to the **dl_links.csv** file in the same directory
+- all found package files will be written to the **dl_links.csv** file in the script directory
 
 Example Format of CSV File:
 
@@ -57,7 +64,8 @@ Example Format of CSV File:
 | --- | ---| ---|
 |EP0006-CUSA02532_00-UNRAVELUNRAVEL09 |Unravel | http://gs2.ww.prod.dl.playstation.net/.../EP0006-CUSA02532_00-UNRAVELUNRAVEL09.pkg
 
-the links without any description or ID will be written to **dl_links_only.txt** file in the same directory for importing into jdownloader
+the links without any description or ID will be written to **dl_links_only.txt** file in the script directory for importing into e.g. jdownloader2
+
 ## Additional
 
 You can then use any program to directly download the package files (e.g. jdownloader2)
