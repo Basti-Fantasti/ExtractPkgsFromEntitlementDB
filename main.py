@@ -2,6 +2,7 @@ import sqlite3
 import json
 import requests
 import csv
+import os
 import xml.etree.ElementTree as ET
 
 
@@ -40,9 +41,10 @@ def RetrieveDownloadLinks(ConfigFileIn):
     return pkgurls
 
 
-dbpath = '.\entitlement.db'
-outfile = '.\dl_links.csv'
-outfileLinksOnly = '.\dl_links_only.txt'
+workdir = os.getcwd()
+dbpath = os.path.join(workdir,'entitlement.db')
+outfile = os.path.join(workdir,'dl_links.csv')
+outfileLinksOnly = os.path.join(workdir,'dl_links_only.txt')
 csvheader = ['id', 'title', 'url']
 
 con = sqlite3.connect(dbpath)
