@@ -4,7 +4,7 @@ import requests
 import csv
 import os
 import xml.etree.ElementTree as ET
-
+import urllib3
 
 # Parse XML Files found in the database
 def ParseXML(XmlIn):
@@ -12,7 +12,8 @@ def ParseXML(XmlIn):
     url = ''
     for child in root:
         #print(child.tag, child.attrib)
-        grandchild = child.getchildren()
+        #grandchild = child.getchildren()
+        grandchild = list(child)
         data = grandchild[0].attrib
         url = data['manifest_url']
     return url
@@ -40,6 +41,8 @@ def RetrieveDownloadLinks(ConfigFileIn):
             pkgurls = RetrieveDownloadLinks(url)             
     return pkgurls
 
+urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
+requests.packages.urllib3.disable_warnings()
 
 workdir = os.getcwd()
 dbpath = os.path.join(workdir,'entitlement.db')
