@@ -28,7 +28,7 @@ Execute the **ExtractPkgsFromEntitlementDB.exe** file and wait for the process t
 
 - Install Python 3.8+ (with virtualenv, virtualenvwrapper-win, pip)
 - clone this repo
-- Inside cloned repo directrory, Setup virtual environment with:
+- Inside cloned repo directory, Setup virtual environment with:
 ```shell    
 python -m venv .venv
 ```
@@ -37,10 +37,10 @@ python -m venv .venv
 .venv\Scripts\activate
 ```
 
-on Unix/Mac
+- Activate venv on Unix/Mac
 
 ```Shell
-source .venv\bin\activate
+source .venv/bin/activate
 ```
 
 - Install dependencies:
